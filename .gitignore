@@ -1,0 +1,16 @@
+# Sistema e editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Dependências e builds (o site é HTML/CSS/JS puro, mas por segurança)
+node_modules/
+dist/
+
+# Cópia compactada do mockup (a pasta "Landing page completa-html" já está no repositório)
+Landing page completa-html.zip
+
+# Configurações locais do Claude Code
+.claude/settings.local.json

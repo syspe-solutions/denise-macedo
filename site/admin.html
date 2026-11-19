@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel – Denise Macêdo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#12302F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 8h40a8 8 0 0 1 8 8v40H16a8 8 0 0 1-8-8z' fill='%239E4524'/%3E%3Cpath d='M22 44V20h10c8 0 12 4 12 12s-4 12-12 12z' fill='%23F6F1EA'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+
+<!-- Tela de acesso -->
+<main class="acesso" id="acesso" hidden>
+  <div class="acesso__in">
+    <a class="marca" href="index.html" aria-label="Ir ao site"><b>Denise Macêdo</b><small>Painel da corretora</small></a>
+    <div>
+      <h1 id="acesso-titulo">Entrar no painel</h1>
+      <p class="acesso__txt" id="acesso-texto" style="margin-top:8px">Digite o código de acesso para ver contatos, acessos e links.</p>
+    </div>
+    <form id="form-acesso" novalidate>
+      <div class="campo">
+        <label for="codigo">Código de acesso</label>
+        <input class="ctl" id="codigo" type="password" autocomplete="current-password" required>
+      </div>
+      <div class="campo" id="campo-confirma" hidden>
+        <label for="codigo2">Repita o código</label>
+        <input class="ctl" id="codigo2" type="password" autocomplete="new-password">
+      </div>
+      <p class="erro-msg" id="acesso-erro" role="alert"></p>
+      <button class="btn btn--marca" type="submit" id="acesso-btn">Entrar</button>
+    </form>
+    <small>Este código só esconde a tela. Ele não é uma proteção de servidor.</small>
+  </div>
+</main>
+
+<!-- Painel -->
+<div class="shell" id="app" hidden>
+  <aside class="lateral">
+    <a class="marca" href="index.html" aria-label="Ir ao site"><b>Denise Macêdo</b><small>Painel da corretora</small></a>
+
+    <nav class="nav-admin" role="tablist" aria-label="Seções do painel">
+      <button role="tab" id="tab-contatos" aria-controls="aba-contatos" aria-selected="true" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+        <span>Contatos</span><span class="selo" id="selo-novos" hidden>0</span>
+      </button>
+      <button role="tab" id="tab-acessos" aria-controls="aba-acessos" aria-selected="false" tabindex="-1" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/></svg>
+        <span>Acessos</span>
+      </button>
+      <button role="tab" id="tab-links" aria-controls="aba-links" aria-selected="false" tabindex="-1" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+        <span>Links</span>
+      </button>
+    </nav>
+
+    <div class="lateral__rodape">
+      <a href="index.html">Ver o site</a>
+      <button type="button" id="btn-sair">Sair</button>
+    </div>
+  </aside>
+
+  <main class="principal">
+
+    <!-- CONTATOS -->
+    <div class="aba" id="aba-contatos" role="tabpanel" aria-labelledby="tab-contatos">
+      <header class="pag-cab">
+        <div>
+          <h1>Contatos</h1>
+          <p class="sub" id="ct-sub" aria-live="polite"></p>
+        </div>
+        <details class="menu-acoes">
+          <summary class="btn btn--fantasma">Mais ações <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="menu-acoes__lista">
+            <small>Levar os contatos</small>
+            <button type="button" id="btn-csv">Exportar para planilha (CSV)</button>
+            <button type="button" id="btn-json">Fazer backup (JSON)</button>
+            <button type="button" id="btn-importar">Importar backup</button>
+            <input type="file" id="arquivo" accept="application/json,.json" hidden>
+            <hr>
+            <small>Dados de exemplo</small>
+            <button type="button" id="btn-exemplos">Carregar exemplos</button>
+            <button type="button" id="btn-apagar-exemplos" hidden>Apagar exemplos</button>
+            <hr>
+            <button type="button" id="btn-limpar" class="perigo">Apagar todos os contatos</button>
+          </div>
+        </details>
+      </header>
+
+      <div class="atencao" id="atencao" hidden>
+        <p id="atencao-texto"></p>
+        <button class="btn btn--marca btn--mini" type="button" id="atencao-btn">Ver novos</button>
+      </div>
+
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por status"></div>
+
+      <div class="ferramentas">
+        <input class="ctl busca" id="busca" type="search" placeholder="Buscar por nome ou WhatsApp" aria-label="Buscar contato">
+        <select class="ctl" id="f-plano" aria-label="Filtrar por interesse"></select>
+        <span class="total" id="total-lista" aria-live="polite"></span>
+      </div>
+
+      <section class="tabela" aria-label="Lista de contatos">
+        <div class="tabela__cab" aria-hidden="true"><span>Contato</span><span>Interesse</span><span>Status</span><span>Recebido</span><span></span></div>
+        <div id="lista"></div>
+      </section>
+    </div>
+
+    <!-- ACESSOS -->
+    <div class="aba" id="aba-acessos" role="tabpanel" aria-labelledby="tab-acessos" hidden>
+      <header class="pag-cab">
+        <div>
+          <h1>Acessos</h1>
+          <p class="sub">O que as pessoas fazem no site, sem identificar ninguém.</p>
+        </div>
+        <details class="menu-acoes">
+          <summary class="btn btn--fantasma">Mais ações <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="menu-acoes__lista">
+            <small>Dados de exemplo</small>
+            <button type="button" id="ac-exemplos">Carregar exemplos (30 dias)</button>
+            <button type="button" id="ac-apagar-exemplos" hidden>Apagar exemplos</button>
+            <hr>
+            <small>Neste aparelho</small>
+            <button type="button" id="ac-notrack" aria-pressed="false"></button>
+            <button type="button" id="ac-apagar" class="perigo">Apagar dados de acesso</button>
+          </div>
+        </details>
+      </header>
+
+      <div class="nota-lista" id="ac-aviso" hidden></div>
+
+      <div class="segmentado" role="group" aria-label="Período">
+        <button type="button" data-dias="1" aria-pressed="false">Hoje</button>
+        <button type="button" data-dias="7" aria-pressed="false">7 dias</button>
+        <button type="button" data-dias="30" aria-pressed="true">30 dias</button>
+        <button type="button" data-dias="0" aria-pressed="false">Tudo</button>
+      </div>
+
+      <dl class="kpis" aria-label="Resumo de acessos">
+        <div class="kpi"><dt>Visitas</dt><dd id="ac-visitas">0</dd><p class="kpi__nota" id="ac-visitas-nota"></p></div>
+        <div class="kpi"><dt>Visitantes</dt><dd id="ac-unicos">0</dd><p class="kpi__nota" id="ac-unicos-nota"></p></div>
+        <div class="kpi kpi--foco"><dt>Chegaram ao contato</dt><dd id="ac-conversao">0%</dd><p class="kpi__nota" id="ac-conversao-nota"></p></div>
+        <div class="kpi"><dt>Cliques no WhatsApp</dt><dd id="ac-zap">0</dd><p class="kpi__nota" id="ac-zap-nota"></p></div>
+      </dl>
+
+      <section class="insights" aria-labelledby="h-insights">
+        <h2 id="h-insights">O que os números dizem</h2>
+        <p class="aviso-amostra" id="ac-amostra" hidden></p>
+        <ol id="ac-insights"></ol>
+      </section>
+
+      <div class="grade-ac">
+        <section class="bloco" aria-labelledby="h-prod"><h3 id="h-prod">Interesse por produto</h3><p class="nota">Cliques em “Pedir cotação” e pedidos pelo formulário.</p><div class="barras" id="ac-produtos"></div></section>
+        <section class="bloco" aria-labelledby="h-func"><h3 id="h-func">Até onde as pessoas rolam</h3><p class="nota">Das visitas, quantas viram cada seção.</p><div class="barras" id="ac-funil"></div></section>
+        <section class="bloco" aria-labelledby="h-bot"><h3 id="h-bot">Botões mais clicados</h3><div class="barras" id="ac-botoes"></div></section>
+        <section class="bloco" aria-labelledby="h-faq"><h3 id="h-faq">Dúvidas mais abertas</h3><div class="barras" id="ac-faq"></div></section>
+        <section class="bloco bloco--largo" aria-labelledby="h-camp"><h3 id="h-camp">Campanhas e links rastreados</h3><p class="nota">Visitas por link com <code>utm_campaign</code> (bio, stories, status…) e quantas chegaram ao contato.</p><div class="barras" id="ac-campanhas"></div></section>
+        <section class="bloco" aria-labelledby="h-orig"><h3 id="h-orig">De onde vêm</h3><p class="nota">Visitas por origem e quantas chegaram ao contato.</p><div class="barras" id="ac-origem"></div></section>
+        <section class="bloco" aria-labelledby="h-disp"><h3 id="h-disp">Aparelho</h3><div class="barras" id="ac-disp"></div></section>
+        <section class="bloco bloco--largo" aria-labelledby="h-dia"><h3 id="h-dia">Visitas por dia</h3><div class="colunas" id="ac-dias" role="img" aria-label="Gráfico de visitas por dia"></div><div class="eixo" id="ac-dias-eixo"></div></section>
+        <section class="bloco bloco--largo" aria-labelledby="h-hora"><h3 id="h-hora">Horário das visitas</h3><div class="colunas" id="ac-horas" role="img" aria-label="Gráfico de visitas por hora do dia"></div><div class="eixo"><span>0h</span><span>6h</span><span>12h</span><span>18h</span><span>23h</span></div></section>
+      </div>
+
+      <p class="rodape-nota">A medição é anônima: sem cookies, sem nome nem telefone. Guarda um código aleatório, o tipo de aparelho, a origem do acesso e os cliques. Quem ativa “Do Not Track” no navegador não é contado.</p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="aba" id="aba-links" role="tabpanel" aria-labelledby="tab-links" hidden>
+      <header class="pag-cab">
+        <div>
+          <h1>Links rastreados</h1>
+          <p class="sub" style="max-width:46em">Use estes links na bio do Instagram, nos stories, no status do WhatsApp, no Google e no cartão. A aba Acessos mostra de onde cada pessoa veio, e o contato do formulário ganha a origem (“via Instagram · bio”).</p>
+        </div>
+      </header>
+
+      <section class="bloco" aria-labelledby="h-base">
+        <h3 id="h-base">Endereço do site</h3>
+        <div class="campo">
+          <label class="sr-only" for="lk-base">Endereço do site</label>
+          <input class="ctl" id="lk-base" type="url" inputmode="url" autocomplete="off" placeholder="https://seusite.com.br/">
+          <span class="nota-campo" id="lk-base-erro" role="alert"></span>
+        </div>
+      </section>
+
+      <section class="bloco" aria-labelledby="h-prontos">
+        <h3 id="h-prontos">Links prontos</h3>
+        <div class="lista-links" id="lk-prontos"></div>
+      </section>
+
+      <section class="bloco" aria-labelledby="h-custom">
+        <h3 id="h-custom">Criar um link novo</h3>
+        <div class="form-links">
+          <div class="campo"><label for="lk-fonte">Onde vai divulgar</label>
+            <select class="ctl" id="lk-fonte">
+              <option value="instagram">Instagram</option><option value="whatsapp">WhatsApp</option><option value="google">Google</option>
+              <option value="facebook">Facebook</option><option value="email">E-mail</option><option value="cartao">Cartão de visita</option><option value="__outro">Outro…</option>
+            </select></div>
+          <div class="campo" id="lk-outra-box" hidden><label for="lk-outra">Nome da origem</label><input class="ctl" id="lk-outra" type="text" maxlength="30" placeholder="ex.: tiktok"></div>
+          <div class="campo"><label for="lk-meio">Tipo</label><input class="ctl" id="lk-meio" type="text" maxlength="30" placeholder="ex.: bio, stories, anuncio" value="bio"></div>
+          <div class="campo"><label for="lk-campanha">Nome da campanha</label><input class="ctl" id="lk-campanha" type="text" maxlength="30" placeholder="ex.: dia-das-maes" value="minha-campanha"></div>
+        </div>
+        <div class="link-linha link-linha--saida">
+          <input class="ctl" id="lk-saida" type="text" readonly aria-label="Link personalizado">
+          <button class="btn btn--marca btn--mini" type="button" id="lk-copiar">Copiar</button>
+        </div>
+        <p class="nota">Só letras, números, hífen e sublinhado. O painel ajusta o resto sozinho.</p>
+      </section>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/admin-acessos.js" defer></script>
+<script src="js/admin-links.js" defer></script>
+<script src="js/admin.js" defer></script>
+</body>
+</html>

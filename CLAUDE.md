@@ -1,0 +1,8 @@
+# Projeto: landing page da corretora Denise Macêdo
+
+- O site de produção está em `site/` (HTML, CSS e JS puros, sem framework). `design/mockup-original/` é só o mockup original de referência.
+- Para qualquer trabalho visual (layout, cores, fontes, componentes, CSS), use a skill `design-autoral` (`.claude/skills/design-autoral/SKILL.md`) e siga o plano de design que está no topo de `site/css/styles.css`.
+- Esta é uma versão MVP de interface, sem dados reais. SUSEP, CNPJ, e-mail, prazos, seguradoras e depoimentos são fictícios e estão listados em `docs/conteudo-ficticio.md`. Manter os avisos de demonstração e o `noindex` até haver dados reais. Fora desse conteúdo de demonstração, não inventar dados.
+- O WhatsApp da Denise é (81) 98564-5355 (`wa.me/5581985645355`). O formulário registra o contato só no navegador (localStorage, sem servidor nem planilha) e abre o WhatsApp. O painel é `site/admin.html`. Em hovers, nunca mover o elemento com `transform` (causa piscar na borda) e envolver em `@media (hover: hover)`.
+- Medição de acessos: `site/js/analytics.js` (anônima, sem cookies) marca cliques com `data-track` e `data-plano`, e a aba "Acessos" do painel (`site/js/admin-acessos.js`) gera os insights. Ao criar novo botão/seção importante, adicione `data-track="..."` (e o rótulo em `BOTOES` no `site/js/admin-acessos.js`).
+- Links rastreados: `utm_source`, `utm_medium` e `utm_campaign` são lidos em `site/js/analytics.js` e guardados na sessão. A aba "Links" do painel (`site/js/admin-links.js`) gera os links. A origem também vai para a etiqueta do contato e para a mensagem do WhatsApp.

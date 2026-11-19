@@ -1,0 +1,45 @@
+name: Publicar no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissões mínimas para publicar no Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Uma publicação por vez; a mais nova cancela a anterior
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Configurar o Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # A imagem de compartilhamento (og:image) precisa de endereço absoluto.
+      # Usa o endereço real do Pages (projeto, site da organização ou domínio próprio).
+      - name: Ajustar o endereço absoluto do site
+        run: sed -i "s|__SITE_URL__|${{ steps.pages.outputs.base_url }}|g" site/index.html
+
+      - name: Empacotar a pasta site/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

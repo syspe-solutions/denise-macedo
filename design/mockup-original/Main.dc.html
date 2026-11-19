@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Denise Macêdo – Planos de saúde e seguros</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{text-decoration:none}
+</style>
+</helmet>
+
+<div style="background: #F6F1EA; font-family: 'Inter', system-ui, sans-serif; color: #12302F; overflow-x: hidden">
+
+<header style="position: relative; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; padding: 20px clamp(20px, 5vw, 72px); border-bottom: 1px solid #E4DCCF">
+<a href="#topo" style="display: flex; align-items: baseline; gap: 10px; color: #12302F">
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 21px; font-weight: 600; letter-spacing: -0.01em">Denise Macêdo</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #64807D">Saúde &amp; Seguros</span>
+</a>
+<nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px">
+<a href="#produtos" style="font-size: 15px; font-weight: 500; color: #3D5755; padding: 6px 0">O que eu cuido</a>
+<a href="#como-funciona" style="font-size: 15px; font-weight: 500; color: #3D5755; padding: 6px 0">Como funciona</a>
+<a href="#duvidas" style="font-size: 15px; font-weight: 500; color: #3D5755; padding: 6px 0">Dúvidas</a>
+<a href="#contato" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-size: 15px; font-weight: 600">Falar no WhatsApp</a>
+</nav>
+</header>
+
+<section id="topo" style="position: relative; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0 48px; padding: 0 clamp(20px, 5vw, 72px); max-width: 1320px; margin: 0 auto">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px; padding: clamp(48px, 6vw, 92px) 0 clamp(52px, 7vw, 100px) 0">
+<p style="margin: 0; display: inline-flex; align-self: flex-start; align-items: center; gap: 9px; padding: 8px 16px; border-radius: 999px; background: #E3EFE9; font-size: 13px; font-weight: 600; letter-spacing: 0.03em; color: #1F5048">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+Corretora registrada · SUSEP [NÚMERO]
+</p>
+<h1 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(34px, 4.2vw, 58px); line-height: 1.08; letter-spacing: -0.015em; color: #12302F">Mais do que vender planos, te ajudo a conquistar <em style="font-style: italic; color: {{accent}}">tranquilidade e proteção</em> para o futuro.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3D5755; max-width: 520px">Especialista em saúde suplementar. Cuido também de vida, auto, viagem, dental e pet, comparando as seguradoras e explicando sem termo técnico.</p>
+<p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 21px; line-height: 1.4; color: {{accent}}">Protegendo o que importa.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 2px">
+<a href="#contato" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-size: 16px; font-weight: 600">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.5-4.9A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"></path></svg>
+Quero minha cotação
+</a>
+<a href="#produtos" style="display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 999px; border: 1.5px solid #12302F; color: #12302F; font-size: 16px; font-weight: 600">Ver o que eu cuido</a>
+</div>
+<p style="margin: 4px 0 0 0; font-size: 14px; line-height: 1.6; color: #64807D">Cotação sem compromisso · Resposta em até [PRAZO]</p>
+</div>
+
+<div style="position: relative; flex: 0 1 470px; width: 470px; max-width: 100%; align-self: flex-end; margin: 0 auto; z-index: 1">
+<div style="position: absolute; left: 50%; top: 6%; width: 450px; height: 450px; max-width: 94%; aspect-ratio: 1 / 1; transform: translateX(-50%); border-radius: 50%; background: #D3E5DF"></div>
+<img src="./assets/999df23bd712234fb440a1fb4bd482f4.png" alt="Denise Macêdo, corretora de seguros, sorrindo" style="position: relative; display: block; width: 100%; height: auto">
+<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(to bottom, rgba(246,241,234,0), #F6F1EA)"></div>
+</div>
+</section>
+
+<section style="border-top: 1px solid #E4DCCF; border-bottom: 1px solid #E4DCCF; background: #FFFFFF; padding: 26px clamp(20px, 5vw, 72px)">
+<div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px 40px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64807D">Trabalho com as seguradoras</p>
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #A79C8C">[SEGURADORA 1]</span>
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #A79C8C">[SEGURADORA 2]</span>
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #A79C8C">[SEGURADORA 3]</span>
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #A79C8C">[SEGURADORA 4]</span>
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #A79C8C">[SEGURADORA 5]</span>
+</div>
+</section>
+
+<section id="produtos" style="padding: clamp(60px, 8vw, 104px) clamp(20px, 5vw, 72px)">
+<div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">O que eu cuido</p>
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.3vw, 42px); line-height: 1.14; letter-spacing: -0.01em">Seis formas de deixar a sua vida mais protegida</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D5755">Você não precisa saber qual produto quer. Me diga o que te preocupa e eu te mostro o caminho.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px">
+
+<article style="display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 20px; background: #FFFFFF; border: 1.5px solid {{accent}}">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7-4.3-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 3.2c0 5-7 9.3-7 9.3z"></path><path d="M4.6 13.6h3L9 11l2 4.2 1.6-3.2 1 1.6h5.8"></path></svg>
+</span>
+<span style="padding: 7px 14px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase">Minha especialidade</span>
+</div>
+<p style="margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64807D">Plano de saúde</p>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 600; letter-spacing: -0.01em">Quanto custa uma consulta particular?</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.65; color: #3D5755">Sou especialista em saúde suplementar. Comparo operadoras, rede credenciada e carência antes de indicar qualquer coisa, para você, sua família ou sua equipe.</p>
+<a href="#contato" style="margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; color: {{accent}}">Pedir cotação
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12 5l7 7-7 7"></path></svg>
+</a>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.4c2-1.3 4.3-1.5 5.6-.3 1.6 1.5 1.3 4.4.6 7-.6 2.3-1.2 5.8-2.7 5.9-1.4.1-1.4-2.8-3.5-2.8s-2.1 2.9-3.5 2.8c-1.5-.1-2.1-3.6-2.7-5.9-.7-2.6-1-5.5.6-7 1.3-1.2 3.6-1 5.6.3z"></path><path d="M12 9.5v3"></path></svg>
+</span>
+<p style="margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64807D">Plano dental</p>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 600; letter-spacing: -0.01em">O dentista só vira urgência quando dói.</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.65; color: #3D5755">Consultas, limpeza e tratamentos odontológicos com mensalidade que cabe no orçamento, no individual ou no familiar.</p>
+<a href="#contato" style="margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; color: {{accent}}">Pedir cotação
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12 5l7 7-7 7"></path></svg>
+</a>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3.2v5.1c0 4.8-3.2 8.9-7.5 10.7-4.3-1.8-7.5-5.9-7.5-10.7V6.2L12 3z"></path><path d="M12 9.6c1-1 2.6-.9 3.3.1.7 1 .3 2.3-.6 3.1L12 15.5l-2.7-2.7c-.9-.8-1.3-2.1-.6-3.1.7-1 2.3-1.1 3.3-.1z"></path></svg>
+</span>
+<p style="margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64807D">Seguro de vida</p>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 600; letter-spacing: -0.01em">E se a renda da casa parar de repente?</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.65; color: #3D5755">Proteção financeira para quem você ama seguir em frente, com coberturas que se ajustam ao seu momento de vida.</p>
+<a href="#contato" style="margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; color: {{accent}}">Pedir cotação
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12 5l7 7-7 7"></path></svg>
+</a>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 16.4h17.2v-4.1l-1.6-4.2a1.6 1.6 0 0 0-1.5-1H6.5a1.6 1.6 0 0 0-1.5 1l-1.6 4.2z"></path><path d="M5.6 16.4v2.1H3.9v-2.1"></path><path d="M20.1 16.4v2.1h-1.7v-2.1"></path><path d="M7 13.4h.01"></path><path d="M17 13.4h.01"></path></svg>
+</span>
+<p style="margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64807D">Seguro auto</p>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 600; letter-spacing: -0.01em">Bateu o carro. E agora?</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.65; color: #3D5755">Seu carro protegido contra colisão, roubo e danos a terceiros, com opções de carro reserva e assistência 24 horas.</p>
+<a href="#contato" style="margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; color: {{accent}}">Pedir cotação
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12 5l7 7-7 7"></path></svg>
+</a>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path><path d="M3.4 9.4h17.2"></path><path d="M3.4 14.6h17.2"></path><path d="M12 3c-2.4 2.5-3.6 5.5-3.6 9s1.2 6.5 3.6 9c2.4-2.5 3.6-5.5 3.6-9S14.4 5.5 12 3z"></path></svg>
+</span>
+<p style="margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64807D">Seguro viagem</p>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 600; letter-spacing: -0.01em">Passar mal longe de casa sai caro.</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.65; color: #3D5755">Atendimento médico, bagagem extraviada e imprevistos cobertos onde quer que você vá, dentro ou fora do país.</p>
+<a href="#contato" style="margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; color: {{accent}}">Pedir cotação
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12 5l7 7-7 7"></path></svg>
+</a>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 13.4c2.3 0 4.3 1.8 4.8 4a2 2 0 0 1-2 2.4c-.9 0-1.8-.4-2.8-.4s-1.9.4-2.8.4a2 2 0 0 1-2-2.4c.5-2.2 2.5-4 4.8-4z"></path><path d="M7.5 11.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4z"></path><path d="M16.5 11.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4z"></path><path d="M10.1 7.6a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2z"></path><path d="M13.9 7.6a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2z"></path></svg>
+</span>
+<p style="margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64807D">Plano pet</p>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 600; letter-spacing: -0.01em">A emergência do pet não avisa.</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.65; color: #3D5755">Consultas, exames e emergências para cães e gatos, porque eles também fazem parte da família.</p>
+<a href="#contato" style="margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; color: {{accent}}">Pedir cotação
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12 5l7 7-7 7"></path></svg>
+</a>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="como-funciona" style="background: #12302F; color: #F6F1EA; padding: clamp(60px, 8vw, 104px) clamp(20px, 5vw, 72px)">
+<div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 46px">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 620px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A6CBC2">Como funciona</p>
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.3vw, 42px); line-height: 1.14; color: #FFFFFF">Simples assim, do primeiro oi até a renovação</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px">
+
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; border-radius: 20px; background: #1C3E3C">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #F6F1EA; color: #12302F; font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 600">1</span>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600; color: #FFFFFF">Você me conta seu momento</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.7; color: #CFE0DB">Uma conversa rápida no WhatsApp para eu entender quem você quer proteger, o que te preocupa e quanto cabe no seu orçamento.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; border-radius: 20px; background: #1C3E3C">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #F6F1EA; color: #12302F; font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 600">2</span>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600; color: #FFFFFF">Eu comparo e explico</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.7; color: #CFE0DB">Levanto as opções das seguradoras parceiras e te mostro as diferenças em português claro, incluindo o que cada plano não cobre.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; border-radius: 20px; background: #1C3E3C">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #F6F1EA; color: #12302F; font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 600">3</span>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600; color: #FFFFFF">Você decide com calma</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.7; color: #CFE0DB">Sem pressa e sem insistência. Depois de contratar, sigo com você na renovação, na dúvida e na hora de acionar o plano.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section style="padding: clamp(60px, 8vw, 104px) clamp(20px, 5vw, 72px)">
+<div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">Por que comigo</p>
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.3vw, 42px); line-height: 1.14; letter-spacing: -0.01em">Você fala com uma pessoa, não com um call center</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #3D5755">Contratar um plano é a parte fácil. Difícil é saber se ele vai te atender no dia em que você precisar. É aí que eu entro.</p>
+
+<div style="display: flex; flex-direction: column; gap: 18px; margin-top: 6px">
+
+<div style="display: flex; align-items: flex-start; gap: 14px">
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; margin-top: 2px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 16.5px; font-weight: 600; color: #12302F">Atendimento de gente, não de robô</p>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #3D5755">Você fala sempre comigo, do primeiro oi até o dia em que precisar usar.</p>
+</div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 14px">
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; margin-top: 2px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 16.5px; font-weight: 600; color: #12302F">Comparo várias seguradoras</p>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #3D5755">Não defendo uma marca. Defendo a opção que protege melhor pelo preço que você pode pagar.</p>
+</div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 14px">
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; margin-top: 2px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 16.5px; font-weight: 600; color: #12302F">Te acompanho no sinistro</p>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #3D5755">Na hora difícil você não fica sozinho com o protocolo. Eu entro junto no processo.</p>
+</div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 14px">
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; margin-top: 2px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 16.5px; font-weight: 600; color: #12302F">Sem letra miúda</p>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #3D5755">Explico carência, franquia e capital segurado antes de você assinar, não depois.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div style="flex: 1 1 320px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 26px 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: {{accent}}">[N] anos</span>
+<span style="font-size: 14.5px; line-height: 1.5; color: #3D5755">de atuação como corretora</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 26px 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: {{accent}}">[N]+</span>
+<span style="font-size: 14.5px; line-height: 1.5; color: #3D5755">famílias e empresas atendidas</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 26px 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: {{accent}}">6</span>
+<span style="font-size: 14.5px; line-height: 1.5; color: #3D5755">tipos de proteção em um só lugar</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 26px 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #EADFD0">
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: {{accent}}">[N]</span>
+<span style="font-size: 14.5px; line-height: 1.5; color: #3D5755">seguradoras parceiras</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 0 clamp(20px, 5vw, 72px) clamp(60px, 8vw, 104px)">
+<div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 34px">
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 38px); line-height: 1.14; letter-spacing: -0.01em; max-width: 640px">O que dizem quem já está protegido</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px">
+
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 20px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"></path><path d="M19 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"></path></svg>
+<blockquote style="margin: 0; font-size: 16.5px; line-height: 1.7; color: #1F3C3A">[Cole aqui o texto de um dos prints de feedback que você publica no Instagram.]</blockquote>
+<figcaption style="font-size: 14.5px; font-weight: 600; color: #3D5755">[Nome do cliente] · [Plano contratado]</figcaption>
+</figure>
+
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 20px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"></path><path d="M19 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"></path></svg>
+<blockquote style="margin: 0; font-size: 16.5px; line-height: 1.7; color: #1F3C3A">[Cole aqui o texto de um dos prints de feedback que você publica no Instagram.]</blockquote>
+<figcaption style="font-size: 14.5px; font-weight: 600; color: #3D5755">[Nome do cliente] · [Plano contratado]</figcaption>
+</figure>
+
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 20px; background: #E3EFE9">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F5048" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"></path><path d="M19 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"></path></svg>
+<blockquote style="margin: 0; font-size: 16.5px; line-height: 1.7; color: #1F3C3A">[Cole aqui o texto de um dos prints de feedback que você publica no Instagram.]</blockquote>
+<figcaption style="font-size: 14.5px; font-weight: 600; color: #3D5755">[Nome do cliente] · [Plano contratado]</figcaption>
+</figure>
+
+</div>
+</div>
+</section>
+
+<section id="duvidas" style="padding: 0 clamp(20px, 5vw, 72px) clamp(60px, 8vw, 104px)">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px">
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 38px); line-height: 1.14; letter-spacing: -0.01em">Dúvidas que sempre me fazem</h2>
+<div style="display: flex; flex-direction: column; gap: 12px">
+
+<div style="border-radius: 16px; background: #FFFFFF; border: 1px solid #EADFD0; overflow: hidden">
+<button type="button" onClick="{{abrir1}}" aria-expanded="{{marca1}}" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; min-height: 60px; padding: 18px 24px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Inter', system-ui, sans-serif; font-size: 16.5px; font-weight: 600; color: #12302F">
+Falar com você tem algum custo?
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; font-size: 17px; font-weight: 600; color: #1F5048">{{sinal1}}</span>
+</button>
+<sc-if value="{{aberto1}}" hint-placeholder-val="{{ true }}">
+<p style="margin: 0; padding: 0 24px 22px 24px; font-size: 16px; line-height: 1.7; color: #3D5755">Não. A conversa e a cotação são gratuitas. [Confirme aqui como funciona a sua remuneração.]</p>
+</sc-if>
+</div>
+
+<div style="border-radius: 16px; background: #FFFFFF; border: 1px solid #EADFD0; overflow: hidden">
+<button type="button" onClick="{{abrir2}}" aria-expanded="{{marca2}}" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; min-height: 60px; padding: 18px 24px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Inter', system-ui, sans-serif; font-size: 16.5px; font-weight: 600; color: #12302F">
+Preciso já saber qual plano eu quero?
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; font-size: 17px; font-weight: 600; color: #1F5048">{{sinal2}}</span>
+</button>
+<sc-if value="{{aberto2}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 0 24px 22px 24px; font-size: 16px; line-height: 1.7; color: #3D5755">Não precisa. A maioria das pessoas chega sem saber. Você me conta o que te preocupa e eu traduzo isso em opções.</p>
+</sc-if>
+</div>
+
+<div style="border-radius: 16px; background: #FFFFFF; border: 1px solid #EADFD0; overflow: hidden">
+<button type="button" onClick="{{abrir3}}" aria-expanded="{{marca3}}" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; min-height: 60px; padding: 18px 24px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Inter', system-ui, sans-serif; font-size: 16.5px; font-weight: 600; color: #12302F">
+Em quanto tempo recebo a cotação?
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; font-size: 17px; font-weight: 600; color: #1F5048">{{sinal3}}</span>
+</button>
+<sc-if value="{{aberto3}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 0 24px 22px 24px; font-size: 16px; line-height: 1.7; color: #3D5755">Em até [PRAZO] depois que eu tiver os seus dados básicos. Casos mais complexos podem levar um pouco mais, e eu te aviso.</p>
+</sc-if>
+</div>
+
+<div style="border-radius: 16px; background: #FFFFFF; border: 1px solid #EADFD0; overflow: hidden">
+<button type="button" onClick="{{abrir4}}" aria-expanded="{{marca4}}" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; min-height: 60px; padding: 18px 24px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Inter', system-ui, sans-serif; font-size: 16.5px; font-weight: 600; color: #12302F">
+Você atende só na sua cidade?
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; font-size: 17px; font-weight: 600; color: #1F5048">{{sinal4}}</span>
+</button>
+<sc-if value="{{aberto4}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 0 24px 22px 24px; font-size: 16px; line-height: 1.7; color: #3D5755">Atendo Recife presencialmente e o restante do Brasil on-line, por WhatsApp e vídeo.</p>
+</sc-if>
+</div>
+
+<div style="border-radius: 16px; background: #FFFFFF; border: 1px solid #EADFD0; overflow: hidden">
+<button type="button" onClick="{{abrir5}}" aria-expanded="{{marca5}}" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; min-height: 60px; padding: 18px 24px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Inter', system-ui, sans-serif; font-size: 16.5px; font-weight: 600; color: #12302F">
+E na hora de usar o plano, como funciona?
+<span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #E3EFE9; font-size: 17px; font-weight: 600; color: #1F5048">{{sinal5}}</span>
+</button>
+<sc-if value="{{aberto5}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 0 24px 22px 24px; font-size: 16px; line-height: 1.7; color: #3D5755">Você me chama. Eu te oriento sobre a documentação, abro o processo com a seguradora e acompanho até a resposta.</p>
+</sc-if>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="contato" style="padding: 0 clamp(20px, 5vw, 72px) clamp(60px, 8vw, 104px)">
+<div style="max-width: 1180px; margin: 0 auto; border-radius: 28px; background: #12302F; color: #F6F1EA; padding: clamp(32px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 44px">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.3vw, 42px); line-height: 1.14; color: #FFFFFF">Vamos conversar sobre o que te preocupa?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #CFE0DB; max-width: 440px">Me conte seu momento e eu volto com as opções que fazem sentido. Sem compromisso e sem insistência.</p>
+<a href="https://wa.me/5581985645355" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; min-height: 54px; margin-top: 8px; padding: 0 28px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-size: 16px; font-weight: 600">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.5-4.9A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"></path></svg>
+Chamar no WhatsApp
+</a>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #A6CBC2">(81) 98564-5355 · [E-MAIL]<br>Atendo Recife e todo o Brasil, on-line</p>
+</div>
+
+<div style="flex: 1 1 340px; min-width: 0">
+<sc-if value="{{naoEnviado}}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{enviar}}" style="display: flex; flex-direction: column; gap: 16px; padding: 28px; border-radius: 20px; background: #1C3E3C">
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="campo-nome" style="font-size: 14px; font-weight: 600; color: #CFE0DB">Seu nome</label>
+<input id="campo-nome" name="nome" type="text" placeholder="Como posso te chamar?" style="min-height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid #456E6A; background: #12302F; color: #FFFFFF; font-family: 'Inter', system-ui, sans-serif; font-size: 16px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="campo-zap" style="font-size: 14px; font-weight: 600; color: #CFE0DB">WhatsApp</label>
+<input id="campo-zap" name="whatsapp" type="tel" placeholder="(00) 00000-0000" style="min-height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid #456E6A; background: #12302F; color: #FFFFFF; font-family: 'Inter', system-ui, sans-serif; font-size: 16px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="campo-plano" style="font-size: 14px; font-weight: 600; color: #CFE0DB">O que te interessa</label>
+<select id="campo-plano" name="plano" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #456E6A; background: #12302F; color: #FFFFFF; font-family: 'Inter', system-ui, sans-serif; font-size: 16px">
+<option value="saude">Plano de saúde</option>
+<option value="dental">Plano dental</option>
+<option value="vida">Seguro de vida</option>
+<option value="auto">Seguro auto</option>
+<option value="viagem">Seguro viagem</option>
+<option value="pet">Plano pet</option>
+<option value="orientacao">Ainda não sei, quero orientação</option>
+</select>
+</div>
+<button type="submit" style="min-height: 54px; margin-top: 4px; border: none; border-radius: 999px; background: #F6F1EA; color: #12302F; font-family: 'Inter', system-ui, sans-serif; font-size: 16px; font-weight: 600; cursor: pointer">Quero minha cotação</button>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #A6CBC2">Seus dados ficam só comigo e servem para te responder.</p>
+</form>
+</sc-if>
+<sc-if value="{{enviado}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 40px 28px; border-radius: 20px; background: #1C3E3C; text-align: center">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: #F6F1EA">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12302F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+</span>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 600; color: #FFFFFF">Recebi seu contato</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #CFE0DB">Te respondo em até [PRAZO]. Se preferir adiantar, me chama no WhatsApp.</p>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #E4DCCF; padding: 40px clamp(20px, 5vw, 72px) 48px">
+<div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-start; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600">Denise Macêdo</span>
+<span style="font-size: 14.5px; line-height: 1.6; color: #64807D">Corretora de seguros · Recife, PE · SUSEP [NÚMERO] · CNPJ [NÚMERO]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center">
+<a href="https://instagram.com/denisemcmacedo" style="font-size: 15px; font-weight: 500; color: #3D5755">Instagram</a>
+<a href="https://wa.me/5581985645355" style="font-size: 15px; font-weight: 500; color: #3D5755">WhatsApp</a>
+<a href="#politica" style="font-size: 15px; font-weight: 500; color: #3D5755">Política de privacidade</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#9E4524","options":["#9E4524","#1F5048","#8A5A1F"],"section":"Marca"},"$preview":{"width":1440,"height":4960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const aberta = this.state && typeof this.state.aberta === 'number' ? this.state.aberta : 1;
+    const enviado = !!(this.state && this.state.enviado);
+    const vals = {
+      accent: this.props.accent ?? '#9E4524',
+      enviado: enviado,
+      naoEnviado: !enviado,
+      enviar: (e) => { e.preventDefault(); this.setState({ enviado: true }); }
+    };
+    for (let i = 1; i <= 5; i++) {
+      const n = i;
+      vals['aberto' + n] = aberta === n;
+      vals['marca' + n] = aberta === n ? 'true' : 'false';
+      vals['sinal' + n] = aberta === n ? '−' : '+';
+      vals['abrir' + n] = () => this.setState({ aberta: aberta === n ? 0 : n });
+    }
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

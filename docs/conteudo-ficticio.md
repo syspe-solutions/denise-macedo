@@ -17,4 +17,4 @@ Este site é um MVP de interface, sem dados reais. Tudo abaixo é inventado e pr
 
 Já são reais e não precisam trocar: o WhatsApp (81) 98564-5355 e o Instagram @denisemcmacedo, que vieram do mockup original.
 
-O site está com `noindex` (`<meta name="robots">` no `index.html`) para não aparecer no Google enquanto tiver conteúdo fictício. Remova quando publicar com dados reais, e adicione o `canonical` com o domínio verdadeiro. Os arquivos de `docs/` não são publicados: só a pasta `site/` vai para o GitHub Pages.
+O site sai com `noindex` (não aparece no Google) enquanto o conteúdo for fictício. Para abrir quando houver dados reais, ligue a chave `INDEXAR_SITE` do repositório e rode o workflow de novo (comandos no README, seção "Abrir o site para o Google"). O `canonical` e a imagem de compartilhamento já usam o endereço real do Pages, e mudam sozinhos com um domínio próprio. Os arquivos de `docs/` não são publicados: só a pasta `site/` vai para o GitHub Pages.

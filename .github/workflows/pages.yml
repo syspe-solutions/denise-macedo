@@ -30,10 +30,22 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      # A imagem de compartilhamento (og:image) precisa de endereço absoluto.
+      # canonical, og:url e og:image precisam de endereço absoluto.
       # Usa o endereço real do Pages (projeto, site da organização ou domínio próprio).
       - name: Ajustar o endereço absoluto do site
         run: sed -i "s|__SITE_URL__|${{ steps.pages.outputs.base_url }}|g" site/index.html
+
+      # Chave para abrir o site ao Google. Por padrão fica FECHADO (noindex).
+      # Para abrir:   gh variable set INDEXAR_SITE --body true --repo syspe-solutions/denise-macedo
+      # Para fechar:  gh variable delete INDEXAR_SITE --repo syspe-solutions/denise-macedo
+      # Depois, rode o workflow de novo (Actions → Publicar no GitHub Pages → Run workflow).
+      - name: Permitir indexação (só se INDEXAR_SITE for "true")
+        if: ${{ vars.INDEXAR_SITE == 'true' }}
+        run: |
+          sed -i '/name="robots"/d' site/index.html
+          BASE="${{ steps.pages.outputs.base_url }}"
+          printf 'Sitemap: %s/sitemap.xml\n' "$BASE" >> site/robots.txt
+          printf '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>%s/</loc></url>\n</urlset>\n' "$BASE" > site/sitemap.xml
 
       - name: Empacotar a pasta site/
         uses: actions/upload-pages-artifact@v3

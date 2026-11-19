@@ -389,7 +389,7 @@
         if (!acessos) acessos = window.PainelAcessos.iniciar({ h: h, $: $, lerJSON: lerJSON, gravar: gravar, lerTexto: lerTexto, aviso: aviso });
         else acessos.render();
       }
-      if (idx === 2 && !links) links = window.PainelLinks.iniciar({ h: h, $: $, lerTexto: lerTexto, gravar: gravar, aviso: aviso });
+      if (idx === 2 && !links) links = window.PainelLinks.iniciar({ h: h, $: $, lerTexto: lerTexto, gravar: gravar, aviso: aviso, siteUrl: CFG.siteUrl });
       try { sessionStorage.setItem(K_ABA, String(idx)); } catch (e) { /* ok */ }
       window.scrollTo(0, 0);
     }

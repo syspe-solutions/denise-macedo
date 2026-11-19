@@ -24,7 +24,12 @@
     var h = ctx.h, $ = ctx.$;
     var base = $('lk-base');
     var salvo = ctx.lerTexto(K_BASE);
-    try { base.value = salvo || new URL('index.html', location.href).href; } catch (e) { base.value = salvo; }
+    function enderecoAuto() { // configurado em config.js ou o endereço desta própria página (sem admin.html)
+      if (ctx.siteUrl) return ctx.siteUrl;
+      try { return new URL('./', location.href).href; } catch (e) { return ''; }
+    }
+    base.value = salvo || enderecoAuto();
+    $('lk-base-auto').addEventListener('click', function () { ctx.gravar(K_BASE, ''); base.value = enderecoAuto(); atualizar(); ctx.aviso('Endereço automático restaurado.'); });
 
     function baseValida() {
       var erro = $('lk-base-erro'); erro.textContent = '';

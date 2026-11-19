@@ -1,0 +1,5 @@
+# Só vale quando o site estiver em um domínio próprio (o robots.txt precisa ficar na raiz do domínio).
+# Enquanto o site estiver em syspe-solutions.github.io/denise-macedo/, quem controla a indexação é a tag
+# "robots" do index.html (veja o README). O painel e a política já têm "noindex" nas próprias páginas.
+User-agent: *
+Disallow: /admin.html

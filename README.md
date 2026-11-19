@@ -56,8 +56,29 @@ Todos os caminhos do site são relativos, então funciona igual em qualquer um d
 
 Repositórios privados só publicam no Pages em alguns planos pagos da organização.
 
+## Abrir o site para o Google (noindex)
+
+Enquanto o conteúdo for fictício, o `index.html` sai com `noindex` (não aparece no Google). A chave fica no GitHub, não no código:
+
+```bash
+# abrir: remove o noindex, publica sitemap.xml e acrescenta o Sitemap ao robots.txt
+gh variable set INDEXAR_SITE --body true --repo syspe-solutions/denise-macedo
+# fechar de novo
+gh variable delete INDEXAR_SITE --repo syspe-solutions/denise-macedo
+```
+
+Depois de mudar a variável, rode o workflow de novo (**Actions → Publicar no GitHub Pages → Run workflow**).
+
+O `canonical`, o `og:url` e a imagem de compartilhamento (`og:image`, `twitter:image`) usam o endereço real do Pages, que o workflow coloca no lugar de `__SITE_URL__`. Com domínio próprio, o endereço muda sozinho. A política de privacidade e o painel têm `noindex` fixo e nunca são abertos.
+
+Observação: o `robots.txt` só tem efeito na raiz de um domínio. Em `syspe-solutions.github.io/denise-macedo/` ele é ignorado pelos buscadores, e quem manda é a tag `robots`. Com domínio próprio ele passa a valer e bloqueia `/admin.html`.
+
+## Endereço do site no painel
+
+Na aba **Links** do painel, o campo "Endereço do site" já vem preenchido com o endereço onde o painel foi aberto (por exemplo, `https://syspe-solutions.github.io/denise-macedo/`). Para fixar outro padrão, preencha `siteUrl` em `site/js/config.js`. Quem editar o campo no painel fica com o valor salvo naquele navegador, e o botão "Usar o endereço automático" volta ao padrão.
+
 ## Cuidados
 
-- O site tem `noindex` (não aparece no Google) enquanto o conteúdo for fictício. Remova a tag `robots` do `site/index.html` ao publicar com dados reais.
+- O site fica fechado ao Google enquanto `INDEXAR_SITE` não for `true` (veja acima). Só abra quando o conteúdo deixar de ser fictício.
 - `admin.html` fica acessível a quem souber o endereço. O código de acesso só esconde a tela e os dados ficam no navegador de quem usa (localStorage). Não coloque dados reais de clientes nele sem proteger a página (ex.: Cloudflare Access) e sem um servidor.
 - Contatos e acessos não saem do navegador: não há integração com planilha nem servidor.

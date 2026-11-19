@@ -384,7 +384,7 @@
       abas.forEach(function (a, i) {
         $(a[0]).setAttribute('aria-selected', String(i === idx)); $(a[0]).tabIndex = i === idx ? 0 : -1; $(a[1]).hidden = i !== idx;
       });
-      document.title = abas[idx][2] + ' – Painel – Denise Macêdo';
+      document.title = abas[idx][2] + ' – Painel – Macêdo Negócios';
       if (idx === 1) {
         if (!acessos) acessos = window.PainelAcessos.iniciar({ h: h, $: $, lerJSON: lerJSON, gravar: gravar, lerTexto: lerTexto, aviso: aviso });
         else acessos.render();

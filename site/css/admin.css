@@ -46,6 +46,10 @@ body.admin { padding-bottom: 0; font-size: 16px; line-height: 1.5; background: v
 .nav-admin { display: flex; flex-direction: column; gap: 4px; }
 .nav-admin button { appearance: none; border: 0; background: transparent; color: var(--sobre-tinta); display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 14px; border-radius: 14px 3px; font: 600 15.5px var(--texto); text-align: left; cursor: pointer; transition: background .15s, color .15s; }
 .nav-admin svg { flex: none; }
+/* Selo premium: estrela em terracota presa ao canto do ícone, como um aviso. */
+.nav-admin .icone { position: relative; display: inline-flex; flex: none; }
+.premium { position: absolute; top: -6px; right: -7px; display: grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; background: var(--marca); color: #fff; box-shadow: 0 0 0 2px var(--tinta); }
+.nav-admin button[aria-selected="true"] .premium { box-shadow: 0 0 0 2px var(--tinta-2); }
 .nav-admin button[aria-selected="true"] { background: var(--tinta-2); color: #fff; }
 @media (hover: hover) and (pointer: fine) { .nav-admin button:hover { background: rgba(255,255,255,.07); color: #fff; } .nav-admin button[aria-selected="true"]:hover { background: var(--tinta-2); } }
 .nav-admin :focus-visible { outline-color: var(--menta-texto); }
